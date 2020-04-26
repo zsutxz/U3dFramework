@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿// using System.Diagnostics;
+using System.Collections.Generic;
 using System.Collections;
 using System;
 using UnityEngine;
@@ -100,8 +101,29 @@ public class UIManager
             // string path = panelPathDict.GetValue(panelType);
             // GameObject panelGo = GameObject.Instantiate(Resources.Load<GameObject>(path), CanvasTransform, false);
             // panel = panelGo.GetComponent<BasePanel>();
+            //把资源加载到内存中    
+            GameObject prefab = Resources.Load<GameObject>("perfab/shop");
+            if (prefab)
+            {
+                //用内存中GameObject模板克隆一个出来,用加载得到的资源对象，实例化游戏对象，实现游戏物体的动态加载  
+                panel = prefab.GetComponent<BasePanel>();//GameObject.Instantiate(prefab) as BasePanel;
+                // if (obj)
+                // {
+                //     obj.name = "xxxxxxxxxxx";
+                // }
+            }
 
-            panel = Resources.Load<BasePanel>("perfab/shop");
+            GameObject hp_bar = GameObject.Instantiate(Resources.Load("perfab/shop"));
+
+            //panel = Resources.Load("perfab/shop.prefab") as BasePanel;
+
+            //panel = Resources.Load<BasePanel>("perfab/shop");
+
+            if (!hp_bar)
+            {
+                Debug.Log("panel is null");
+            }
+
 
             panelDict.Add(panelType, panel);
         }
