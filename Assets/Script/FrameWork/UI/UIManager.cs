@@ -1,12 +1,9 @@
-﻿// using System.Diagnostics;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections;
 using System;
 using UnityEngine;
-// using LitJson;
 
-public class UIManager : MonoBehaviour
+public class UIManager
 {
     private static UIManager _instance;
     private Transform canvasTransform;
@@ -29,6 +26,7 @@ public class UIManager : MonoBehaviour
             {
                 _instance = new UIManager();
             }
+
 
             return _instance;
         }
@@ -59,7 +57,6 @@ public class UIManager : MonoBehaviour
 
         BasePanel panel = GetPanel(panelType);
         panelStack.Push(panel);
-
         panel.OnEnter();
     }
 
@@ -89,6 +86,7 @@ public class UIManager : MonoBehaviour
 
     private BasePanel GetPanel(string panelType)
     {
+
         if (panelDict == null)
         {
             panelDict = new Dictionary<string, BasePanel>();
@@ -96,38 +94,31 @@ public class UIManager : MonoBehaviour
 
         BasePanel panel = panelDict.GetValue(panelType);
 
-
         //如果没有实例化面板，寻找路径进行实例化，并且存储到已经实例化好的字典面板中
         if (panel == null)
         {
-            //panel = (BasePanel)Instantiate(Resources.Load("Pperfab/shop"));
+            // string path = panelPathDict.GetValue(panelType);
+            // GameObject panelGo = GameObject.Instantiate(Resources.Load<GameObject>(path), CanvasTransform, false);
+            // panel = panelGo.GetComponent<BasePanel>();
 
-            panel = Resources.Load<BasePanel>("Pperfab/shop");
-
-            //panel = Resources.Load<BasePanel>("perfab/shop");
-
-            if (!panel)
-            {
-                Debug.Log("panel is null");
-            }
+            panel = Resources.Load<BasePanel>("perfab/shop");
 
             panelDict.Add(panelType, panel);
         }
-
         return panel;
     }
 
     //解析json文件
     private void ParseUIPanelTypeJson()
     {
-        panelPathDict = new Dictionary<string, string>();
-        TextAsset textUIPanelType = Resources.Load<TextAsset>("UIPanelTypeJson");
-        //UIPanelInfoList panelInfoList = JsonMapper.ToObject<UIPanelInfoList>(textUIPanelType.text);
+        // panelPathDict = new Dictionary<string, string>();
+        // TextAsset textUIPanelType = Resources.Load<TextAsset>("UIPanelTypeJson");
+        // UIPanelInfoList panelInfoList = JsonMapper.ToObject<UIPanelInfoList>(textUIPanelType.text);
 
-        //foreach (UIPanelInfo panelInfo in panelInfoList.panelInfoList)
-        {
-            panelPathDict.Add("Task", "TaskPanel");
-            //Debug.Log(panelInfo.panelType + ":" + panelInfo.path);
-        }
+        // foreach (UIPanelInfo panelInfo in panelInfoList.panelInfoList)
+        // {
+        //     panelPathDict.Add(panelInfo.panelType, panelInfo.path);
+        //     //Debug.Log(panelInfo.panelType + ":" + panelInfo.path);
+        // }
     }
 }
