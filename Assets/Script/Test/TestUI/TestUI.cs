@@ -9,7 +9,6 @@ public class TestUI : MonoBehaviour
 {
     void Start()
     {
-        UIManager panelManager = UIManager.Instance;
-        panelManager.PushPanel(UIPanelType.MainMenu);
+        UIManager.Instance.PushPanel(UIPanelType.Shop);
     }
 }

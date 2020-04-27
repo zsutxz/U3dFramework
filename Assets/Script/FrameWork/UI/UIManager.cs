@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace MyFrameWork
 {
-    public class UIManager : MonoBehaviour
+    public class UIManager
     {
         private static UIManager _instance;
         private Transform canvasTransform;
@@ -33,6 +33,13 @@ namespace MyFrameWork
 
                 return _instance;
             }
+        }
+        /// <summary>
+        /// Awake is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
+        {
+            //m_Instance = this;
         }
 
         private Dictionary<string, string> panelPathDict;
@@ -97,7 +104,7 @@ namespace MyFrameWork
             //如果没有实例化面板，寻找路径进行实例化，并且存储到已经实例化好的字典面板中
             if (panel == null)
             {
-                GameObject panelGo = GameObject.Instantiate(Resources.Load<GameObject>("prefab/test"), CanvasTransform, false);
+                GameObject panelGo = GameObject.Instantiate(Resources.Load<GameObject>("prefab/" + panelType), CanvasTransform, false);
 
                 panel = panelGo.GetComponent<BasePanel>();
 

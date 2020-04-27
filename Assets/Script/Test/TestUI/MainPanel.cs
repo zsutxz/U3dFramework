@@ -9,7 +9,7 @@ public class MainPanel : BasePanel
 
     void Start()
     {
-        UIManager.Instance.PushPanel(UIPanelType.Shop);
+
     }
 
     public override void OnEnter()

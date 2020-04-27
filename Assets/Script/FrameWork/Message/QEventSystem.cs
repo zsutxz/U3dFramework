@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 //事件接口
 public delegate void OnEvent(int key, params object[] param);
- public class QEventSystem : Singleton<QEventSystem>
+public class QEventSystem : Singleton<QEventSystem>
 {
     private bool mIsRecycled = false;
     private readonly Dictionary<int, ListenerWrap> mAllListenerMap = new Dictionary<int, ListenerWrap>(50);
 
-    public bool IsRecycled { get; set; }
+    // public bool IsRecycled { get; set; }
 
-    public QEventSystem() {}
+    public QEventSystem() { }
 
     #region 内部结构
 
@@ -24,7 +24,7 @@ public delegate void OnEvent(int key, params object[] param);
                 return false;
             }
 
-            var next = mEventList.First; 
+            var next = mEventList.First;
             OnEvent call = null;
             LinkedListNode<OnEvent> nextCache = null;
             //循环调用消息对应的事件
@@ -40,7 +40,7 @@ public delegate void OnEvent(int key, params object[] param);
             return true;
         }
 
-        public bool Add(OnEvent listener)  
+        public bool Add(OnEvent listener)
         {
             if (mEventList == null)
             {
@@ -138,8 +138,8 @@ public delegate void OnEvent(int key, params object[] param);
     }
 
     #endregion
-    
-    
+
+
     #region 高频率使用的API,封装成静态方法,提供给外部调用
     //发送调用事件的信息
     // public static bool SendEvent<T>(T key,params object[] param) where T : IConvertible
