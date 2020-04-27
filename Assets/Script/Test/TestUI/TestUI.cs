@@ -5,8 +5,10 @@ using System;
 
 using MyFrameWork;
 
-public class TestUI : MonoBehaviour {
-    void Start () {
+public class TestUI : MonoBehaviour
+{
+    void Start()
+    {
         UIManager panelManager = UIManager.Instance;
         panelManager.PushPanel(UIPanelType.MainMenu);
     }
