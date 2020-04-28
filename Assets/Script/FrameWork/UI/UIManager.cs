@@ -30,7 +30,6 @@ namespace MyFrameWork
                     _instance = new UIManager();
                 }
 
-
                 return _instance;
             }
         }
