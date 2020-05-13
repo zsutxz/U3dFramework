@@ -25,7 +25,6 @@ public class FlyController : MonoBehaviour
     public float rotationX = 0.0f;
     public float rotationY = 0.0f;
 
-
     void Update()
     {
         //获取鼠标偏移量

@@ -139,4 +139,31 @@ public class ShowLogo : MonoBehaviour
         }
     }
 
+    //屏幕分辨率
+    void AdjustScreen()
+    {
+        //const float devHeight = 9.6f; //设计的第尺寸高
+        const float devWidth = 9.6f; //设计的第尺寸宽
+        
+        float screenHeight = Screen.height;
+        
+        Debug.Log("screem h:"+screenHeight);
+
+        float orthSize = GetComponent<Camera>().orthographicSize;  //相机的正交属性设置的摄像机大小
+
+        float aspectRation = Screen.width*1.0f/Screen.height; //相机的宽高比
+
+        //根据摄像机的orthSize和实际的宽高比，计算摄像机的宽度值。
+        float cameraWidth = orthSize*2*aspectRation;
+
+        //如果摄像机宽度小于设计宽度
+        if(cameraWidth<devWidth)
+        {
+            orthSize = devWidth/(2*aspectRation);               //计算新的摄像机大小。
+            Debug.Log("new orthSize:"+orthSize);
+            GetComponent<Camera>().orthographicSize = orthSize; //设置新的摄像机大小
+        }
+
+    }
+
 }
