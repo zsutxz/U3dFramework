@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Framework;
+using U3dFramework;
 
 public class TestMsg : MonoBehaviour {
     // public Dispatcher disaptch;

@@ -2,7 +2,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-using MyFrameWork;
+using U3dFramework;
 
 public class MainPanel : BasePanel
 {

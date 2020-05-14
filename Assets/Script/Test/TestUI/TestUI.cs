@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-using MyFrameWork;
+using U3dFramework;
 
 public class TestUI : MonoBehaviour
 {

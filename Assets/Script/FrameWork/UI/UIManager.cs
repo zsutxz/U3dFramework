@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 using UnityEngine;
 
-namespace MyFrameWork
+namespace U3dFramework
 {
     public class UIManager
     {

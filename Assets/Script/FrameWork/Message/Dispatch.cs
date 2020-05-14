@@ -9,7 +9,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Framework
+
+namespace U3dFramework
 {
     public interface IDispatcher<T>
     {
