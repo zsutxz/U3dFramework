@@ -9,8 +9,8 @@ using System.IO;
 /// </summary>
 public class Builder : Editor
 {
-    public static string sourcePath = Application.dataPath + "/Resource";
-    const string AssetBundlesOutputPath = "Assets/OutPut";
+    public static string sourcePath = Application.dataPath + "/Resources";
+    const string AssetBundlesOutputPath = "./OutPut";
 
     [MenuItem("Tools/BuildAssetBundle")]
     public static void BuildAssetBundle()

@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 567427427}
   - component: {fileID: 567427426}
   - component: {fileID: 567427423}
+  - component: {fileID: 567427424}
+  - component: {fileID: 567427425}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -142,6 +144,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af56f301a7ec44b43bbb74ef309906a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &567427424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567427422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &567427425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567427422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2b0be029b16fa4794bdd580d235291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poses: []
+  Name: 
 --- !u!223 &567427426
 Canvas:
   m_ObjectHideFlags: 0
@@ -151,8 +184,8 @@ Canvas:
   m_GameObject: {fileID: 567427422}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1160921960}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -191,8 +224,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985251250}
-  - component: {fileID: 985251249}
-  - component: {fileID: 985251248}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -200,30 +231,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &985251248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985251247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &985251249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985251247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &985251250
 Transform:
   m_ObjectHideFlags: 0
@@ -232,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985251247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -249,6 +256,8 @@ GameObject:
   - component: {fileID: 1160921961}
   - component: {fileID: 1160921960}
   - component: {fileID: 1160921959}
+  - component: {fileID: 1160921962}
+  - component: {fileID: 1160921963}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -320,6 +329,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1160921962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160921958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1942a3e0b6e6a4d9e93661dd94804a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1160921963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160921958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c355d897377e34dbc3b0af6a63e90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VSyncCount: 0
+  MaxNoLimit: 0
+  MaxFPSValue: 80
 --- !u!1 &1637122151
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 public class TestScriptWizard: ScriptableWizard 
 {
 
-    [MenuItem("CustomEditorTutorial/TestScriptWizard")]
+    [MenuItem("TestCommand/TestScriptWizard")]
     private static void MenuEntryCall() 
     {
         ScriptableWizard.DisplayWizard("Copy an object.",typeof(TestScriptWizard),"Copy!");

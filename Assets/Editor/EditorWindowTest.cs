@@ -5,7 +5,7 @@ using System;
  public class EditorWindowTest : EditorWindow 
 {
 
-    [MenuItem("CustomEditorTutorial/WindowTest")]
+    [MenuItem("TestCommand/WindowTest")]
     private static void ShowWindow() 
     {
         EditorWindowTest myWindow = (EditorWindowTest)EditorWindow.GetWindow(typeof(EditorWindowTest), false, "MyWindow", true);//创建窗口
