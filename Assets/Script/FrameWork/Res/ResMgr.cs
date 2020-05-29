@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Framework
+namespace U3dFramework
 {
     //资源信息
     public class AssetInfo

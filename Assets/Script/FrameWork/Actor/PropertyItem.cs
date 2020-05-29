@@ -10,25 +10,12 @@ namespace U3dFramework{
         private int curRandomInt;
         private float curRandomFloat;
         private Type propertyType;
-        public IDynamicProperty Owner = null;    //立钻哥哥：owner
-
+        public IDynamicProperty Owner = null;
         public object Content{
 
             get{
                 return GetContent();
             }
-
-//          get{
-//               if(value != GetContent()){
-//                     object oldContent = GetContent();
-//                     SetContent(value);
-//  
-//                     if(Owner != null){
-//                         Owner.DoChangeProperty(ID, oldContent, value);   //立钻哥哥
-//                     }
-//                 }
-//             }
-
         }
 
  
@@ -53,9 +40,9 @@ namespace U3dFramework{
             rawContent = content;
             propertyType = content.GetType();
 
-//          if(propertyType == System.Int32 || propertyType == System.Single){
-//                canRandom = true;
-//             }
+         if(propertyType == typeof(System.Int32) || propertyType == typeof(System.Single)){
+               canRandom = true;
+            }
 
         }
 
